@@ -1,0 +1,46 @@
+\documentclass[a4paper]{article}
+\usepackage{xeCJK}
+\usepackage[margin=20mm]{geometry}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{multicol} % 新增多列支持
+\usetikzlibrary{calc}
+
+\setCJKmainfont{SimSun}
+
+% 自定义选择题环境
+\newenvironment{answerchoices}[1][50]{
+	\begin{multicols}{2} % 两列布局
+		\begin{enumerate}[label=\arabic*., leftmargin=60pt, itemsep=5pt, topsep=0pt, partopsep=0pt]
+			\foreach \i in {1,...,#1} {
+				\item \fbox{\parbox{0.015\textwidth}{A}} \ \  \fbox{\parbox{0.015\textwidth}{B}} \ \    \fbox{\parbox{0.015\textwidth}{C}} \ \   \fbox{\parbox{0.015\textwidth}{D}}
+			}
+		\end{enumerate}
+	\end{multicols}
+}{}
+
+\begin{document}
+	\pagestyle{empty}
+	
+	% 定位标记
+	\tikz[remember picture,overlay]{
+		\foreach \x/\y in {2/2,2/28,18/2,18/28}{
+			\draw[line width=2pt] ($(current page.north west)+(\x cm,-\y cm)$) rectangle +(1,1);
+		}
+	}
+	
+	\begin{center}
+		{\Large\bfseries 答题卡} \\[5mm]
+		姓名：\underline{\hspace{4cm}} \hfill 学号：\underline{\hspace{4cm}} \\[10mm]
+	\end{center}
+	
+	% 生成50道选择题（自动分两列排列）
+	\begin{answerchoices}[50]
+	\end{answerchoices}
+	
+	% 填涂说明
+	\begin{center}
+				\textbf{填涂要求}：请用2B铅笔将选项括号[\makebox[0.6cm]]完全涂满。修改时请用橡皮擦干净。
+	\end{center}
+	
+\end{document}

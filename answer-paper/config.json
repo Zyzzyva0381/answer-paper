@@ -1,0 +1,12 @@
+{
+    "detection_params": {
+        "start_x": 264.8,
+        "start_y": 491.0,
+        "col_gap": 1344.4,
+        "row_gap": 113.7,
+        "option_gap": 112.0,
+        "box_w": 58.8,
+        "box_h": 64.9
+    },
+    "answer_key": "answers.txt"
+}
