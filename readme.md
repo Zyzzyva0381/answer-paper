@@ -1,5 +1,9 @@
 # Answer Sheet Grading System 答题卡批改系统
 
+## 致谢/Acknowlegements
+
+该项目由 [印度鹅卵石](https://space.bilibili.com/470106832) 发起并编写核心逻辑。点击超链接访问他的bilibili主页。
+
 ## 基本原理/Basic Principles
 本系统通过计算机视觉技术自动识别和批改标准化答题卡。主要流程包括：  
 This system uses computer vision to automatically grade standardized answer sheets. Main workflow:
